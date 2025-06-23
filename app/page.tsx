@@ -18,12 +18,12 @@ export default function Home() {
         </ol>
       </main>
       <div>
-        {process.env.APP_ENV === 'development' && (
+        {process.env.NEXT_PUBLIC_APP_ENV === 'development' && (
           <div>
             <h1>Development</h1>
           </div>
         )}
-        {process.env.APP_ENV === 'production' && (
+        {process.env.NEXT_PUBLIC_APP_ENV === 'production' && (
           <div>
             <h1>Production</h1>
           </div>
