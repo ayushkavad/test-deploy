@@ -9,8 +9,7 @@ RUN npm install
 COPY . .
 
 # Inject build-time environment variables
-ARG NEXT_PUBLIC_APP_URL
-ENV NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL
+ENV NEXT_PUBLIC_APP_URL=production
 
 RUN npm run build
 
