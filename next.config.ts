@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   output: 'standalone',
   /* config options here */
   env: {
-    NEXT_PUBLIC_APP_ENV: process.env.NEXT_PUBLIC_APP_ENV,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   },
 };
 

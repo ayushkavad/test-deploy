@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function Home() {
   console.log(
-    'process.env.NEXT_PUBLIC_APP_ENV',
-    process.env.NEXT_PUBLIC_APP_ENV,
+    'process.env.NEXT_PUBLIC_APP_URL',
+    process.env.NEXT_PUBLIC_APP_URL,
   );
 
   return (
@@ -23,12 +23,12 @@ export default function Home() {
         </ol>
       </main>
       <div>
-        {process.env.NEXT_PUBLIC_APP_ENV === 'development' && (
+        {process.env.NEXT_PUBLIC_APP_URL === 'development' && (
           <div>
             <h1>Development</h1>
           </div>
         )}
-        {process.env.NEXT_PUBLIC_APP_ENV === 'production' && (
+        {process.env.NEXT_PUBLIC_APP_URL === 'production' && (
           <div>
             <h1>Production</h1>
           </div>
