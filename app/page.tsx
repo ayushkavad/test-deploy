@@ -16,27 +16,19 @@ export default function Home() {
             Save and see your changes instantly.
           </li>
         </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          {process.env.ENV === 'development' && (
-            <a
-              className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className="dark:invert"
-                src="/vercel.svg"
-                alt="Vercel logomark"
-                width={20}
-                height={20}
-              />
-              Deploy now
-            </a>
-          )}
-        </div>
       </main>
+      <div>
+        {process.env.APP_ENV === 'development' && (
+          <div>
+            <h1>Development</h1>
+          </div>
+        )}
+        {process.env.APP_ENV === 'production' && (
+          <div>
+            <h1>Production</h1>
+          </div>
+        )}
+      </div>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
