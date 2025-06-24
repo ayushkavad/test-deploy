@@ -21,6 +21,9 @@ export default function Home() {
             Save and see your changes instantly.
           </li>
         </ol>
+        <div>
+          <h1>Jivana</h1>
+        </div>
       </main>
       <div>
         {process.env.NEXT_PUBLIC_APP_URL === 'development' && (

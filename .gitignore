@@ -1,3 +1,14 @@
 node_modules
 .env
 .next
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+
+# Sensitive files
+terraform-key.json
