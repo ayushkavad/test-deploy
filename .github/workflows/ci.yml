@@ -60,4 +60,4 @@ jobs:
           terraform apply -auto-approve
           -var="project_id=${{ secrets.GCP_PROJECT_ID }}"
           -var="region=${{ secrets.GCP_REGION }}"
-          -var="image_url=$IMAGE_TAG"
+          -var="image_url=${{ env.IMAGE_TAG }}"
