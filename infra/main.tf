@@ -8,6 +8,8 @@ resource "google_cloud_run_service" "jivana_local" {
   location = var.region
   project  = var.project_id
 
+  autogenerate_revision_name = true 
+
   template {
     spec {
       containers {
