@@ -56,8 +56,9 @@ jobs:
 
       - name: Terraform Apply
         working-directory: ./infra
-        run: >
+        run: |
           terraform apply -auto-approve -input=false \
-          -var="project_id=${{ secrets.GCP_PROJECT_ID }}" \
-          -var="region=${{ secrets.GCP_REGION }}" \
-          -var="image_url=$IMAGE_TAG"
+            -var="project_id=${{ secrets.GCP_PROJECT_ID }}" \
+            -var="region=${{ secrets.GCP_REGION }}" \
+            -var="image_url=$IMAGE_TAG"
+
