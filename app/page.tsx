@@ -21,10 +21,6 @@ export default function Home() {
             Save and see your changes instantly.
           </li>
         </ol>
-        <div>
-          <h1>Jivana</h1>
-          <p>Jivana is a platform for creating and managing your business.</p>
-        </div>
       </main>
       <div>
         {process.env.NEXT_PUBLIC_APP_URL === 'development' && (
