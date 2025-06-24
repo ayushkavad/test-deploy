@@ -10,7 +10,7 @@ export default function Home() {
       )}
       {process.env.NEXT_PUBLIC_APP_URL === 'production' && (
         <div>
-          <h1>We are in Production</h1>
+          <h1 className="text-zinc-500">We are in Production</h1>
         </div>
       )}
     </div>
