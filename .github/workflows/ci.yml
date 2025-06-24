@@ -12,6 +12,7 @@ jobs:
     env:
       PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
       REGION: ${{ secrets.GCP_REGION }}
+      SERVICE_NAME: jivana-app
       IMAGE_NAME: jivana-local
       IMAGE_TAG: gcr.io/${{ secrets.GCP_PROJECT_ID }}/jivana-local
 
