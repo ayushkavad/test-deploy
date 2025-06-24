@@ -1,11 +1,6 @@
 import Image from 'next/image';
 
 export default function Home() {
-  console.log(
-    'process.env.NEXT_PUBLIC_APP_URL',
-    process.env.NEXT_PUBLIC_APP_URL,
-  );
-
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -25,12 +20,12 @@ export default function Home() {
       <div>
         {process.env.NEXT_PUBLIC_APP_URL === 'development' && (
           <div>
-            <h1>Development</h1>
+            <h1>We are in Development</h1>
           </div>
         )}
         {process.env.NEXT_PUBLIC_APP_URL === 'production' && (
           <div>
-            <h1>Production</h1>
+            <h1>We are in Production</h1>
           </div>
         )}
       </div>
