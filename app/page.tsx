@@ -23,6 +23,7 @@ export default function Home() {
         </ol>
         <div>
           <h1>Jivana</h1>
+          <p>Jivana is a platform for creating and managing your business.</p>
         </div>
       </main>
       <div>
