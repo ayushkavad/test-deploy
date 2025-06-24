@@ -12,6 +12,7 @@ jobs:
     env:
       PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
       REGION: ${{ secrets.GCP_REGION }}
+      SERVICE_NAME: jivana-app
       IMAGE_NAME: jivana-local
       IMAGE_TAG: gcr.io/${{ secrets.GCP_PROJECT_ID }}/jivana-local
 
@@ -45,20 +46,10 @@ jobs:
           docker build -t $IMAGE_TAG .
           docker push $IMAGE_TAG
 
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.6.6
-
-      - name: Terraform Init
-        working-directory: ./infra
-        run: terraform init
-
-      - name: Terraform Apply
-        working-directory: ./infra
+      - name: Deploy to Cloud Run
         run: |
-          terraform apply -auto-approve -input=false \
-            -var="project_id=${{ secrets.GCP_PROJECT_ID }}" \
-            -var="region=${{ secrets.GCP_REGION }}" \
-            -var="image_url=$IMAGE_TAG"
-
+          gcloud run deploy $SERVICE_NAME \
+            --image $IMAGE_TAG \
+            --region $REGION \
+            --platform managed \
+            --allow-unauthenticated
