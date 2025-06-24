@@ -1,6 +1,6 @@
 provider "google" {
-  project     = var.project_id
-  region      = var.region
+  project = var.project_id
+  region  = var.region
 }
 
 resource "google_cloud_run_service" "jivana_local" {
@@ -23,6 +23,15 @@ resource "google_cloud_run_service" "jivana_local" {
     percent         = 100
     latest_revision = true
   }
+
+  lifecycle {
+    ignore_changes = [
+      metadata,
+      template[0].metadata,
+      template[0].spec[0].containers[0].resources,
+      template[0].spec[0].containers[0].env
+    ]
+  }
 }
 
 resource "google_cloud_run_service_iam_member" "allusers" {
@@ -32,8 +41,6 @@ resource "google_cloud_run_service_iam_member" "allusers" {
   role     = "roles/run.invoker"
   member   = "allUsers"
 }
-
-
 
 output "url" {
   value = google_cloud_run_service.jivana_local.status[0].url
